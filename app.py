@@ -16,7 +16,7 @@ def load_gradio_ui():
         fn=answer_question,
         title="TechNova RAG Assistant",
         additional_inputs=select_categories,
-    ).launch(server_port=7860)
+    ).queue().launch(server_port=7860, server_name="0.0.0.0")
 
 
 if __name__ == "__main__":
