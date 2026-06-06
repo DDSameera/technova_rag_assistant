@@ -125,4 +125,4 @@ Results will be saved to `evaluation/eval_results.json`.
 - ChromaDB
 - OpenAI GPT-4.1-nano
 - Gradio
-# technova_rag_assistant
+
