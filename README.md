@@ -3,6 +3,13 @@
 A Retrieval-Augmented Generation (RAG) chatbot for TechNova customer support,
 built with LangChain, ChromaDB, and OpenAI.
 
+## Data Visulaization
+![alt text](assets/token_distribution_by_category.png)
+![alt text](assets/chunk_size_distribution.png)
+![alt text](assets/number_of_chunks_per_cat.png)
+![alt text](assets/document_chunk_embeddings.png)
+
+
 ## Overview
 
 TechNova RAG Assistant is a customer support chatbot that answers questions
