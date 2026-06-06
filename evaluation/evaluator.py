@@ -109,7 +109,7 @@ def evaluate_answer():
             if "I don't have enough information to answer that question" in answer:
                 out_of_scope_refused += 1
 
-        if any(src in actual_sources for src in expected_sources):
+        if any(actual.endswith(expected) for expected in expected_sources for actual in actual_sources):
             retrieval_hits += 1
 
         # Judge it

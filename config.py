@@ -8,8 +8,8 @@ EVAL_RESULT_FILE_PATH = os.path.join(BASE_DIR, "evaluation/eval_results.json")
 
 MODEL = "gpt-4.1-nano"
 EMBEDING_MODEL = "text-embedding-3-small"
-CHUNK_SIZE = 1200
-CHUNK_OVERLAP = 300
+CHUNK_SIZE = 800
+CHUNK_OVERLAP = 150
 RETRIEVAL_K = 13
-RELEVANCE_THRESHOLD = 1.5
+RELEVANCE_THRESHOLD = 3
 DB_NAME = "vector_db"
