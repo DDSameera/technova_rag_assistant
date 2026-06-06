@@ -32,7 +32,7 @@ technova_rag_assistant/
 │ ├── retriever.py
 │ └── loader.py
 ├── evaluation/
-│ ├── evaluator.py
+│ ├── evaluate.py
 │ ├── questions.json
 │ └── eval_results.json
 ├── knowledge-base/
@@ -98,7 +98,7 @@ Run Evaluation
 
 ```
 
-python -m evaluation.evaluator
+python -m evaluation.evaluate
 
 ```
 
