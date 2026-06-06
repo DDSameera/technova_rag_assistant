@@ -11,6 +11,7 @@ dependencies = [
     "langchain-community>=0.4.2",
     "langchain-openai>=1.2.2",
     "matplotlib>=3.10.9",
+    "modal>=1.4.3",
     "openai>=2.38.0",
     "python-dotenv>=1.2.2",
     "tiktoken>=0.13.0",

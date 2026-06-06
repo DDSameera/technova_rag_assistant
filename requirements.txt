@@ -7,3 +7,4 @@ langchain_chroma
 umap-learn
 matplotlib
 gradio
+modal
