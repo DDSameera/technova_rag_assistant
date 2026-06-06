@@ -2,7 +2,7 @@
   "summary": {
     "total_questions": 29,
     "retrieval_precision": 0.931,
-    "answer_score_avg": 4.83,
+    "answer_score_avg": 4.76,
     "refused_correctly": true
   },
   "per_question": [
@@ -119,7 +119,7 @@
     {
       "id": "q11",
       "question": "Does my battery qualify for a warranty replacement if it holds 75% capacity after 8 months?",
-      "predicted_answer": "Yes, your battery qualifies for a warranty replacement if it holds less than 80% of its original capacity within the warranty period. Since your battery holds 75% after 8 months, it is below the 80% threshold and is covered under the warranty for battery replacement.",
+      "predicted_answer": "Yes, your battery qualifies for a warranty replacement if it holds less than 80% of its original capacity within the warranty period. Since your battery holds 75% after 8 months, it is below the 80% threshold and is eligible for a free battery replacement under the warranty.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_001.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/faqs/warranty.md",
@@ -203,13 +203,13 @@
     {
       "id": "q19",
       "question": "What financing options does TechNova offer in the US?",
-      "predicted_answer": "TechNova offers installment plans through Klarna and Affirm in the US, which are available for qualifying orders. The minimum qualifying order amount is not specified in the provided information.",
+      "predicted_answer": "TechNova offers installment plans through Klarna and Affirm in the US for qualifying orders.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/company/careers.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/company/about.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/company/contact.md"
       ],
-      "score": 4
+      "score": 2
     },
     {
       "id": "q20",
@@ -280,7 +280,7 @@
     {
       "id": "q26",
       "question": "What was the root cause of the stylus issue in ticket 005 and how was it resolved?",
-      "predicted_answer": "The root cause of the stylus issue in ticket 005 was a known problem with NovaOS Tab 3 version 3.4.1 that affected a subset of stylus drivers. The resolution involved checking for updates, installing NovaOS version 3.4.2, and restarting both the tablet and stylus. After these steps, full functionality was restored.",
+      "predicted_answer": "The root cause of the stylus issue in ticket 005 was a known problem with NovaOS Tab 3 version 3.4.1 that affected a subset of stylus drivers. The resolution involved checking for updates, installing the hotfix version 3.4.2, and restarting both the tablet and pen. After these steps, full stylus functionality was restored.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_005.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_006.md",
