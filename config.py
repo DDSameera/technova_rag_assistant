@@ -5,6 +5,7 @@ PERSIST_DIRECTORY = os.path.join(BASE_DIR, "vector_db")
 KNOWLEDGE_BASE_PATH = os.path.join(BASE_DIR, "knowledge-base", "*")
 QUESTION_FILE_PATH = os.path.join(BASE_DIR, "evaluation/questions.json")
 EVAL_RESULT_FILE_PATH = os.path.join(BASE_DIR, "evaluation/eval_results.json")
+OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 
 MODEL = "gpt-4.1-nano"
 EMBEDING_MODEL = "text-embedding-3-small"

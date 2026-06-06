@@ -1,13 +1,14 @@
 from langchain_openai import ChatOpenAI
 
 from config import MODEL, RELEVANCE_THRESHOLD, RETRIEVAL_K
-from prompts import SYSTEM_PROMPT
+from prompts import get_system_prompt,get_judge_prompt
 from rag.embeddings import init_vectorsotre
 from rag.retriever import retrieve_docs
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
 vectorstores = init_vectorsotre()
-
+JUDGE_SYSTEM_PROMPT = get_judge_prompt()
+SYSTEM_PROMPT = get_system_prompt()
 
 def clean_source_path(path: str) -> str:
     return (
@@ -29,9 +30,7 @@ def answer_question(question: str, history=None, category=None):
             question, k=RETRIEVAL_K
         )
         best_score = docs_with_score[0][1] if docs_with_score else 999
-        print(f"docs with score : {docs_with_score}")
-        print(f"Best simialiry score : {best_score}")
-
+       
         if best_score > RELEVANCE_THRESHOLD:
             return "I don't have enough information to answer that question."
 
@@ -42,8 +41,7 @@ def answer_question(question: str, history=None, category=None):
     else:
         docs = []
 
-        print(f"docs : {docs}")
-
+       
     # STEP 2: LLM call — runs for BOTH branches
     context = "\n\n".join(
         f"Source: {doc.metadata.get('source')}\n"
@@ -58,8 +56,7 @@ def answer_question(question: str, history=None, category=None):
         SystemMessage(content=system_prompt),
     ]
 
-    print(history)
-
+   
     for h in history:
         if h["role"] == "user":
             messages.append(HumanMessage(content=h["content"]))
@@ -72,7 +69,6 @@ def answer_question(question: str, history=None, category=None):
     response = llm.invoke(messages)
     answer = response.content
 
-    print(answer)
     if "[NO_SOURCES]" in answer:
         answer = answer.replace("[NO_SOURCES]", "").strip()
 

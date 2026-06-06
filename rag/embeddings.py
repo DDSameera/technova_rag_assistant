@@ -12,13 +12,13 @@ from config import (
     DB_NAME,
     EMBEDING_MODEL,
     PERSIST_DIRECTORY,
+    OPENAI_KEY
 )
 
 
 def init_vectorsotre():
     load_dotenv(override=True)
 
-    OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP
@@ -30,8 +30,7 @@ def init_vectorsotre():
     embedding_model = OpenAIEmbeddings(model=EMBEDING_MODEL, api_key=OPENAI_KEY)
 
     if os.path.exists(PERSIST_DIRECTORY) and os.listdir(PERSIST_DIRECTORY):
-        print("Loading existing Chroma DB...")
-
+       
         vectorstore = Chroma(
             collection_name=DB_NAME,
             embedding_function=embedding_model,
@@ -39,8 +38,7 @@ def init_vectorsotre():
         )
 
     else:
-        print("Creating new Chroma DB...")
-
+      
         vectorstore = Chroma.from_documents(
             documents=chunks,
             embedding=embedding_model,

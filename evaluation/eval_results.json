@@ -2,7 +2,7 @@
   "summary": {
     "total_questions": 29,
     "retrieval_precision": 0.931,
-    "answer_score_avg": 4.69,
+    "answer_score_avg": 4.83,
     "refused_correctly": true
   },
   "per_question": [
@@ -42,13 +42,13 @@
     {
       "id": "q04",
       "question": "Is the Nova Watch Series 3 compatible with iPhones?",
-      "predicted_answer": "It has limited iOS compatibility, specifically for notifications only.",
+      "predicted_answer": "The Nova Watch Series 3 requires Nova Phone X1 or other Android 11+ devices for full compatibility. Limited iOS compatibility is available for notifications only.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/products/nova_smartwatch.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/faqs/troubleshooting.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/release_notes/novawatch_os_4_1.md"
       ],
-      "score": 4
+      "score": 5
     },
     {
       "id": "q05",
@@ -59,12 +59,12 @@
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/policies/shipping_policy.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/faqs/payments.md"
       ],
-      "score": 4
+      "score": 5
     },
     {
       "id": "q06",
       "question": "Can I return earbuds after I have opened them?",
-      "predicted_answer": "Earbuds and earphones, once the seal has been broken, are non-returnable for hygiene reasons.",
+      "predicted_answer": "Earbuds and earphones, once the hygienic seal has been broken, are non-returnable for hygiene reasons.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_002.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/faqs/returns.md",
@@ -97,7 +97,7 @@
     {
       "id": "q09",
       "question": "Within how many days of purchase can I add NovaCare+ to my product?",
-      "predicted_answer": "You can add NovaCare+ within 60 days of your original purchase.",
+      "predicted_answer": "You can add NovaCare+ within **60 days** of your original purchase.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/faqs/warranty.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/policies/warranty_policy.md",
@@ -119,7 +119,7 @@
     {
       "id": "q11",
       "question": "Does my battery qualify for a warranty replacement if it holds 75% capacity after 8 months?",
-      "predicted_answer": "Yes, your battery qualifies for a warranty replacement if it holds less than 80% of its original capacity within the warranty period. Since your battery holds 75% after 8 months, it is eligible for a free battery replacement.",
+      "predicted_answer": "Yes, your battery qualifies for a warranty replacement if it holds less than 80% of its original capacity within the warranty period. Since your battery holds 75% after 8 months, it is below the 80% threshold and is covered under the warranty for battery replacement.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_001.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/faqs/warranty.md",
@@ -130,18 +130,18 @@
     {
       "id": "q12",
       "question": "Was the customer in ticket 004 covered for the cracked screen on their Nova Watch?",
-      "predicted_answer": "Cracked glass is classified as physical damage, which is NOT covered under the standard 1-year warranty. The customer did NOT have NovaCare+. Therefore, the cracked screen was not covered.",
+      "predicted_answer": "Cracked glass is classified as physical damage, which is NOT covered under the standard 1-year warranty. The customer did not have NovaCare+. Therefore, the cracked screen was not covered.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_004.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_006.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/policies/warranty_policy.md"
       ],
-      "score": 5
+      "score": 4
     },
     {
       "id": "q13",
       "question": "How did TechNova handle the lost laptop shipment in ticket 003?",
-      "predicted_answer": "TechNova reshipped a replacement laptop via overnight shipping at no extra cost and refunded the $14.99 express shipping fee as compensation. The customer received the replacement in 2 days. They also filed the carrier claim themselves to prevent customer inconvenience.",
+      "predicted_answer": "TechNova reshipped a replacement laptop via overnight shipping at no extra cost and refunded the $14.99 express shipping fee as compensation. The customer received the replacement in 2 days. They also filed the carrier claim themselves to prevent customer inconvenience caused by carrier failures.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_003.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_008.md",
@@ -203,18 +203,18 @@
     {
       "id": "q19",
       "question": "What financing options does TechNova offer in the US?",
-      "predicted_answer": "TechNova offers installment plans through Klarna and Affirm in the US, for qualifying orders.",
+      "predicted_answer": "TechNova offers installment plans through Klarna and Affirm in the US, which are available for qualifying orders. The minimum qualifying order amount is not specified in the provided information.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/company/careers.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/company/about.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/company/contact.md"
       ],
-      "score": 2
+      "score": 4
     },
     {
       "id": "q20",
       "question": "How do I force restart my Nova Phone X1 if it won't turn on?",
-      "predicted_answer": "Press and hold the Power + Volume Down buttons simultaneously for 10 seconds.",
+      "predicted_answer": "To force restart your Nova Phone X1, press and hold the Power + Volume Down buttons simultaneously for 10 seconds.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/faqs/troubleshooting.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/products/nova_phone_x1.md",
@@ -258,7 +258,7 @@
     {
       "id": "q24",
       "question": "Which NovaOS update introduced the NovaAssist on-device AI feature?",
-      "predicted_answer": "NovaAssist was introduced in NovaOS 5.2.",
+      "predicted_answer": "NovaAssist was introduced in NovaOS 5.2, released on November 4, 2024.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/release_notes/novaos_5_2.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/release_notes/novaos_5_1.md",
@@ -280,7 +280,7 @@
     {
       "id": "q26",
       "question": "What was the root cause of the stylus issue in ticket 005 and how was it resolved?",
-      "predicted_answer": "The root cause of the stylus issue in ticket 005 was a known problem with NovaOS Tab 3 version 3.4.1 that affected a subset of stylus drivers. It was resolved by installing the hotfix (3.4.2), which was released 2 days prior, and then restarting both the tablet and pen. After these steps, full functionality was restored.",
+      "predicted_answer": "The root cause of the stylus issue in ticket 005 was a known problem with NovaOS Tab 3 version 3.4.1 that affected a subset of stylus drivers. The resolution involved checking for updates, installing NovaOS version 3.4.2, and restarting both the tablet and stylus. After these steps, full functionality was restored.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_005.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_006.md",
@@ -291,7 +291,7 @@
     {
       "id": "q27",
       "question": "Is the warranty on a Nova Laptop honored internationally?",
-      "predicted_answer": "Yes, TechNova provides an **International Limited Warranty** on all laptops.",
+      "predicted_answer": "Yes, TechNova provides an **International Limited Warranty** on all laptops. The EU support representative was misinformed, but support confirms that the warranty is honored internationally.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_008.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/faqs/warranty.md",
@@ -308,7 +308,7 @@
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/company/about.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/company/careers.md"
       ],
-      "score": 4
+      "score": 5
     },
     {
       "id": "q29",

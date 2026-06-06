@@ -14,7 +14,6 @@ def clean_text(text):
 
 def get_documents():
 
-    print(KNOWLEDGE_BASE_PATH)
     folders = glob.glob(KNOWLEDGE_BASE_PATH)
 
     documents = []

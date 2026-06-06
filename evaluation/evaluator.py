@@ -8,7 +8,7 @@ from config import (
     RELEVANCE_THRESHOLD,
     RETRIEVAL_K,
 )
-from prompts import JUDGE_SYSTEM_PROMPT, SYSTEM_PROMPT
+from prompts import get_judge_prompt, get_system_prompt
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
 from rag.chain import clean_source_path
@@ -16,6 +16,9 @@ from rag.embeddings import init_vectorsotre
 from rag.retriever import retrieve_docs
 
 vectorstores = init_vectorsotre()
+
+JUDGE_SYSTEM_PROMPT = get_judge_prompt()
+SYSTEM_PROMPT = get_system_prompt()
 
 
 def llm_judge(
@@ -100,7 +103,6 @@ def evaluate_answer():
             question=question, history=None, category=None
         )
 
-        print(actual_sources)
         # raise SystemExit
 
         is_out_of_scope = len(expected_sources) == 0
@@ -119,7 +121,6 @@ def evaluate_answer():
         score = judgement["score"]
         total_score += score
 
-        print(f"retrieveal_hits : {retrieval_hits}")
         results.append(
             {
                 "id": id,
@@ -165,9 +166,7 @@ def answer_question_for_eval(question: str, history=None, category=None):
             question, k=RETRIEVAL_K
         )
         best_score = docs_with_score[0][1] if docs_with_score else 999
-        print(f"docs with score : {docs_with_score}")
-        print(f"Best simialiry score : {best_score}")
-
+       
         if best_score > RELEVANCE_THRESHOLD:
             return ("I don't have enough information to answer that question.", [])
 
@@ -177,8 +176,6 @@ def answer_question_for_eval(question: str, history=None, category=None):
             docs = retrieve_docs(question, category)
     else:
         docs = retrieve_docs(question)
-
-        print(f"docs : {docs}")
 
     # STEP 2: LLM call — runs for BOTH branches
     context = "\n\n".join(
@@ -194,7 +191,6 @@ def answer_question_for_eval(question: str, history=None, category=None):
         SystemMessage(content=system_prompt),
     ]
 
-    print(history)
 
     for h in history:
         if h["role"] == "user":
@@ -208,7 +204,7 @@ def answer_question_for_eval(question: str, history=None, category=None):
     response = llm.invoke(messages)
     answer = response.content
 
-    print(answer)
+
     if "[NO_SOURCES]" in answer:
         answer = answer.replace("[NO_SOURCES]", "").strip()
 
