@@ -1,0 +1,9 @@
+python-dotenv
+tiktoken
+langchain-community
+langchain-openai
+tqdm
+langchain_chroma
+umap-learn
+matplotlib
+gradio

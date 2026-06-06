@@ -1,0 +1,19 @@
+[project]
+name = "technova-rag-assistant"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "chromadb>=1.5.9",
+    "gradio>=6.15.2",
+    "langchain-chroma>=1.1.0",
+    "langchain-community>=0.4.2",
+    "langchain-openai>=1.2.2",
+    "matplotlib>=3.10.9",
+    "openai>=2.38.0",
+    "python-dotenv>=1.2.2",
+    "tiktoken>=0.13.0",
+    "tqdm>=4.67.3",
+    "umap-learn>=0.5.12",
+]

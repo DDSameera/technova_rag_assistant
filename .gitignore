@@ -1,0 +1,18 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local environment and OS/editor files
+.env
+.DS_Store
+.vscode/
+
+# Generated local vector database
+vector_db/
