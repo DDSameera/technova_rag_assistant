@@ -2,7 +2,7 @@
   "summary": {
     "total_questions": 29,
     "retrieval_precision": 0.931,
-    "answer_score_avg": 4.76,
+    "answer_score_avg": 4.83,
     "refused_correctly": true
   },
   "per_question": [
@@ -64,7 +64,7 @@
     {
       "id": "q06",
       "question": "Can I return earbuds after I have opened them?",
-      "predicted_answer": "Earbuds and earphones, once the hygienic seal has been broken, are non-returnable for hygiene reasons.",
+      "predicted_answer": "Earbuds and earphones, once the seal has been broken, are non-returnable for hygiene reasons.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_002.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/faqs/returns.md",
@@ -119,7 +119,7 @@
     {
       "id": "q11",
       "question": "Does my battery qualify for a warranty replacement if it holds 75% capacity after 8 months?",
-      "predicted_answer": "Yes, your battery qualifies for a warranty replacement if it holds less than 80% of its original capacity within the warranty period. Since your battery holds 75% after 8 months, it is below the 80% threshold and is eligible for a free battery replacement under the warranty.",
+      "predicted_answer": "Yes, your battery qualifies for a warranty replacement if it holds less than 80% of its original capacity within the warranty period. Since your battery holds 75% after 8 months, it is below the 80% threshold and is covered under the warranty.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_001.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/faqs/warranty.md",
@@ -141,7 +141,7 @@
     {
       "id": "q13",
       "question": "How did TechNova handle the lost laptop shipment in ticket 003?",
-      "predicted_answer": "TechNova reshipped a replacement laptop via overnight shipping at no extra cost and refunded the $14.99 express shipping fee as compensation. The customer received the replacement in 2 days. They also filed the carrier claim themselves to prevent customer inconvenience caused by carrier failures.",
+      "predicted_answer": "Please follow the instructions below:\n1. The package was lost in transit at a regional distribution center.\n2. The carrier confirmed the loss after a 48-hour trace.\n3. TechNova reshipped a replacement laptop via overnight shipping at no extra cost.\n4. The $14.99 express shipping fee was refunded as compensation.\n5. The customer received the replacement in 2 days.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_003.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_008.md",
@@ -203,13 +203,13 @@
     {
       "id": "q19",
       "question": "What financing options does TechNova offer in the US?",
-      "predicted_answer": "TechNova offers installment plans through Klarna and Affirm in the US for qualifying orders.",
+      "predicted_answer": "TechNova offers installment plans through Klarna and Affirm in the US, which are available for qualifying orders. The minimum qualifying order amount is not specified in the provided information.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/company/careers.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/company/about.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/company/contact.md"
       ],
-      "score": 2
+      "score": 4
     },
     {
       "id": "q20",
@@ -280,7 +280,7 @@
     {
       "id": "q26",
       "question": "What was the root cause of the stylus issue in ticket 005 and how was it resolved?",
-      "predicted_answer": "The root cause of the stylus issue in ticket 005 was a known problem with NovaOS Tab 3 version 3.4.1 that affected a subset of stylus drivers. The resolution involved checking for updates, installing the hotfix version 3.4.2, and restarting both the tablet and pen. After these steps, full stylus functionality was restored.",
+      "predicted_answer": "The root cause of the stylus issue in ticket 005 was a known problem with NovaOS Tab 3 version 3.4.1 that affected a subset of stylus drivers. The resolution was to manually check for updates, install the NovaOS Tab 3 version 3.4.2 hotfix, and restart both the tablet and pen. After these steps, full stylus functionality was restored.",
       "retrieved_sources": [
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_005.md",
         "/Users/admin/Desktop/Assessment 2/technova_rag_assistant/support_tickets/ticket_006.md",

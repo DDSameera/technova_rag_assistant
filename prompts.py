@@ -82,3 +82,7 @@ def get_judge_prompt():
         }
     """
     return JUDGE_SYSTEM_PROMPT
+
+
+SYSTEM_PROMPT = get_system_prompt()
+JUDGE_SYSTEM_PROMPT = get_judge_prompt()

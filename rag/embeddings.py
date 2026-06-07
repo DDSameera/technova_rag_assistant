@@ -1,7 +1,7 @@
 import os
 
 
-from dotenv import load_dotenv
+
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -17,8 +17,8 @@ from config import (
 
 
 def init_vectorsotre():
-    load_dotenv(override=True)
-
+    if not OPENAI_KEY:
+        raise ValueError("OPENAI_API_KEY is not set. Add it to your .env file.")
 
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP

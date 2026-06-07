@@ -11,11 +11,8 @@ JUDGE_SYSTEM_PROMPT = get_judge_prompt()
 SYSTEM_PROMPT = get_system_prompt()
 
 def clean_source_path(path: str) -> str:
-    return (
-        path.replace("../knowledge-base/", "")
-        .replace("knowledge-base/", "")
-        .replace("../", "")
-    )
+    path = path.split("technova_rag_assistant/", 1)[-1]
+    return  path.replace("knowledge-base/","")
 
 
 def answer_question(question: str, history=None, category=None):
