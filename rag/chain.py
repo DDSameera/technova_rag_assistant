@@ -10,6 +10,9 @@ from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 JUDGE_SYSTEM_PROMPT = get_judge_prompt()
 SYSTEM_PROMPT = get_system_prompt()
 
+
+
+
 def clean_source_path(path: str) -> str:
     path = path.split("technova_rag_assistant/", 1)[-1]
     return  path.replace("knowledge-base/","")
@@ -21,27 +24,22 @@ def answer_question(question: str, history=None, category=None):
         history = []
 
     vectorstores = init_vectorsotre()
-
-    # STEP 1: decide docs only
-    if len(question.strip().split()) >= 3:
-        # Generic off-topic detection using similarity score
-        docs_with_score = vectorstores.similarity_search_with_score(
-            question, k=RETRIEVAL_K
-        )
-        best_score = docs_with_score[0][1] if docs_with_score else 999
+    
+    # Generic off-topic detection using similarity score
+    docs_with_score = vectorstores.similarity_search_with_score(
+      question, k=RETRIEVAL_K
+    )
+    best_score = docs_with_score[0][1] if docs_with_score else 999
        
-        if best_score > RELEVANCE_THRESHOLD:
-            return "I don't have enough information to answer that question."
-
-        if category is None or category == "" or category == "All":
-            docs = [doc for doc, score in docs_with_score]
-        else:
-            docs = retrieve_docs(question, category)
+    if best_score > RELEVANCE_THRESHOLD:
+       docs= []  # off-topic or conversational — let LLM decide via system prompt
+    elif category is None or category == "" or category == "All":
+        docs = [doc for doc, score in docs_with_score]
     else:
-        docs = []
-
-       
-    # STEP 2: LLM call — runs for BOTH branches
+        docs = retrieve_docs(question, category)
+    
+   
+     # STEP 2: LLM call — runs for BOTH branches
     context = "\n\n".join(
         f"Source: {doc.metadata.get('source')}\n"
         f"Category: {doc.metadata.get('category')}\n"
@@ -69,7 +67,7 @@ def answer_question(question: str, history=None, category=None):
     answer = response.content
 
     if "[NO_SOURCES]" in answer:
-        answer = answer.replace("[NO_SOURCES]", "").strip()
+          return  answer.replace("[NO_SOURCES]", "").strip()
 
     if answer == "I don't have enough information to answer that question.":
         return answer

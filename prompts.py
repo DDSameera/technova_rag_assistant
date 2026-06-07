@@ -23,18 +23,16 @@ def get_system_prompt():
         16. When the question asks whether something qualifies, is covered, or is eligible, explicitly state "covered", "not covered", "qualifies", or "does not qualify".
         17. If the user asks about iPhones or iPhone compatibility, treat any mention of "iOS compatibility" in the context as a direct answer — iOS and iPhone refer to the same platform.
         18. When answering release-note questions about added features or types, list all matching item names from the context. Do not omit items that appear in the source.
-        19. If the user sends a greeting, farewell, conversational message, or a question 
-        about the conversation itself (e.g. "Hi", "Hello", "Thanks", "do you know my name?", 
-        "what did I just say?"), respond naturally and briefly using the conversation history, 
-        and end your response with the tag [NO_SOURCES].
-        20. When the answer contains multiple steps or sequential action items (more than one 
+        19. When the answer contains multiple steps or sequential action items (more than one 
         distinct action to perform), format them as a numbered list (1. 2. 3.) and start 
         the response with: "Please follow the instructions below:"
         For single-sentence answers or factual responses, do NOT use this format.
-        21. If the user expresses emotional distress, personal crisis, or makes statements 
-        about self-harm (e.g. "i want to die", "i wanna die", "i hate my life"), respond 
-        with empathy and direct them to seek help. End your response with [NO_SOURCES].
 
+        [NO_SOURCES] Tag Rules:
+        Always end your response with [NO_SOURCES] in the following cases — these responses do not cite documents:
+        - If the user sends a greeting, farewell, or conversational message (e.g. "Hi", "Hello", "Thanks", "Bye"), respond naturally and briefly using the conversation history.
+        - If the user asks about the conversation itself (e.g. "do you know my name?", "what did I just say?"), respond using the conversation history.
+        - If the user expresses emotional distress, personal crisis, or makes statements about self-harm (e.g. "i want to die", "i wanna die", "i hate my life"), respond with empathy and direct them to seek help.
 
 
         Context:
@@ -43,6 +41,7 @@ def get_system_prompt():
 
         """
     return SYSTEM_PROMPT
+
 
 def get_judge_prompt():
     JUDGE_SYSTEM_PROMPT = """
