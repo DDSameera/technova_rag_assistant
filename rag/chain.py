@@ -6,7 +6,7 @@ from rag.embeddings import init_vectorsotre
 from rag.retriever import retrieve_docs
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
-vectorstores = init_vectorsotre()
+
 JUDGE_SYSTEM_PROMPT = get_judge_prompt()
 SYSTEM_PROMPT = get_system_prompt()
 
@@ -22,6 +22,8 @@ def answer_question(question: str, history=None, category=None):
 
     if history is None:
         history = []
+
+    vectorstores = init_vectorsotre()
 
     # STEP 1: decide docs only
     if len(question.strip().split()) >= 3:

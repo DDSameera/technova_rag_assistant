@@ -15,7 +15,7 @@ from rag.chain import clean_source_path
 from rag.embeddings import init_vectorsotre
 from rag.retriever import retrieve_docs
 
-vectorstores = init_vectorsotre()
+
 
 JUDGE_SYSTEM_PROMPT = get_judge_prompt()
 SYSTEM_PROMPT = get_system_prompt()
@@ -161,6 +161,7 @@ def answer_question_for_eval(question: str, history=None, category=None):
     # STEP 1: decide docs only
     if len(question.strip().split()) >= 3:
         # Generic off-topic detection using similarity score
+        vectorstores = init_vectorsotre()
 
         docs_with_score = vectorstores.similarity_search_with_score(
             question, k=RETRIEVAL_K
