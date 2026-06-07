@@ -67,7 +67,9 @@ def answer_question(question: str, history=None, category=None):
     answer = response.content
 
     if "[NO_SOURCES]" in answer:
-          return  answer.replace("[NO_SOURCES]", "").strip()
+          answer =  answer.replace("[NO_SOURCES]", "").strip()
+          if not docs:
+              return answer
 
     if answer == "I don't have enough information to answer that question.":
         return answer
@@ -79,6 +81,7 @@ def answer_question(question: str, history=None, category=None):
         if doc.metadata.get("source")
     )
     top_sources = list(seen.keys())[:3]
+    print(top_sources)
     sources_text = "\n".join(f"- {src}" for src in top_sources)
 
     if(sources_text):
